@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "39585605478",
+    "project_id": "logintest-b0359",
+    "storage_bucket": "logintest-b0359.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39585605478:android:72e2e978f67de539ddcaa7",
+        "android_client_info": {
+          "package_name": "systems.insidiouslogic.logintest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39585605478-sh1bh1f1r0g3jp6rtkqp1qlom1i0g4as.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "systems.insidiouslogic.logintest",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "39585605478-melp3cmlcn2ol53ut9etg4h7q85bin2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBORJKMdZRisZjDPFPmXB-3aSTFW3Rg82U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39585605478-melp3cmlcn2ol53ut9etg4h7q85bin2k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "39585605478-82dp1eakm5u2a5ls95ktamfhdtotskp6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "systems.insidiouslogic.logintest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
