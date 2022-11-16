@@ -1,10 +1,4 @@
-import '../auth/auth_util.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -82,13 +76,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                         labelColor: Colors.white,
                         labelPadding:
                             EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                        labelStyle:
-                            FlutterFlowTheme.of(context).subtitle1.override(
-                                  fontFamily: 'Outfit',
-                                  color: Color(0xFF0F1113),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
                         indicatorColor: Colors.white,
                         tabs: [
                           Tab(
@@ -117,27 +104,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Email Address',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           hintText: 'Enter your email...',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.white,
@@ -177,14 +144,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   20, 24, 20, 24),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF0F1113),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
                                         maxLines: null,
                                       ),
                                     ),
@@ -196,27 +155,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         obscureText: !passwordVisibility,
                                         decoration: InputDecoration(
                                           labelText: 'Password',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           hintText: 'Enter your password...',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.white,
@@ -272,88 +211,25 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                           ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF0F1113),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 24, 0, 0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          GoRouter.of(context)
-                                              .prepareAuthEvent();
-
-                                          final user = await signInWithEmail(
-                                            context,
-                                            emailAddressController!.text,
-                                            passwordController!.text,
-                                          );
-                                          if (user == null) {
-                                            return;
-                                          }
-
-                                          context.goNamedAuth(
-                                              'HomePage', mounted);
-                                        },
-                                        text: 'Sign In',
-                                        options: FFButtonOptions(
-                                          width: 230,
-                                          height: 50,
-                                          color: Colors.white,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF4B39EF),
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
-                                          elevation: 3,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                        ),
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        child: const Text('Sign In'),
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 20, 0, 0),
-                                      child: FFButtonWidget(
+                                      child: ElevatedButton(
                                         onPressed: () {
                                           print(
                                               'Button-ForgotPassword pressed ...');
                                         },
-                                        text: 'Forgot Password?',
-                                        options: FFButtonOptions(
-                                          width: 170,
-                                          height: 40,
-                                          color: Color(0xFF4B39EF),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Colors.white,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
-                                          elevation: 0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                        ),
+                                        child: const Text('Forgot Password?'),
                                       ),
                                     ),
                                     Padding(
@@ -370,16 +246,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     0, 12, 0, 0),
                                             child: Text(
                                               'Or use a social account to login',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Color(0x98FFFFFF),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                             ),
                                           ),
                                         ],
@@ -394,19 +260,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           InkWell(
-                                            onTap: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user =
-                                                  await signInWithGoogle(
-                                                      context);
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              context.goNamedAuth(
-                                                  'HomePage', mounted);
-                                            },
+                                            onTap: () {},
                                             child: Container(
                                               width: 50,
                                               height: 50,
@@ -423,27 +277,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ),
                                               alignment:
                                                   AlignmentDirectional(0, 0),
-                                              child: FaIcon(
-                                                FontAwesomeIcons.google,
-                                                color: Colors.white,
-                                                size: 24,
+                                              child: Text(
+                                                'Google',
                                               ),
                                             ),
                                           ),
                                           InkWell(
-                                            onTap: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user =
-                                                  await signInWithApple(
-                                                      context);
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              context.goNamedAuth(
-                                                  'HomePage', mounted);
-                                            },
+                                            onTap: () {},
                                             child: Container(
                                               width: 50,
                                               height: 50,
@@ -460,10 +300,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ),
                                               alignment:
                                                   AlignmentDirectional(0, 0),
-                                              child: FaIcon(
-                                                FontAwesomeIcons.apple,
-                                                color: Colors.white,
-                                                size: 24,
+                                              child: Text(
+                                                'Apple',
                                               ),
                                             ),
                                           ),
@@ -490,27 +328,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Email Address',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           hintText: 'Enter your email...',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.white,
@@ -550,14 +368,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   20, 24, 20, 24),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF0F1113),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
                                         maxLines: null,
                                       ),
                                     ),
@@ -569,27 +379,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         obscureText: !passwordCreateVisibility,
                                         decoration: InputDecoration(
                                           labelText: 'Password',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           hintText: 'Enter your password...',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF57636C),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.white,
@@ -645,58 +435,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                           ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF0F1113),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 24, 0, 0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          GoRouter.of(context)
-                                              .prepareAuthEvent();
-
-                                          final user =
-                                              await createAccountWithEmail(
-                                            context,
-                                            emailAddressCreateController!.text,
-                                            passwordCreateController!.text,
-                                          );
-                                          if (user == null) {
-                                            return;
-                                          }
-
-                                          context.goNamedAuth(
-                                              'HomePage', mounted);
-                                        },
-                                        text: 'Create Account',
-                                        options: FFButtonOptions(
-                                          width: 230,
-                                          height: 50,
-                                          color: Colors.white,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF4B39EF),
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
-                                          elevation: 3,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                        ),
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        child: const Text('Create Account'),
                                       ),
                                     ),
                                     Padding(
@@ -713,16 +459,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     0, 24, 0, 0),
                                             child: Text(
                                               'Sign up using a social account',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Color(0x98FFFFFF),
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
                                             ),
                                           ),
                                         ],
@@ -737,19 +473,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           InkWell(
-                                            onTap: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user =
-                                                  await signInWithGoogle(
-                                                      context);
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              context.goNamedAuth(
-                                                  'HomePage', mounted);
-                                            },
+                                            onTap: () {},
                                             child: Container(
                                               width: 50,
                                               height: 50,
@@ -766,27 +490,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ),
                                               alignment:
                                                   AlignmentDirectional(0, 0),
-                                              child: FaIcon(
-                                                FontAwesomeIcons.google,
-                                                color: Colors.white,
-                                                size: 24,
+                                              child: Text(
+                                                'Google',
                                               ),
                                             ),
                                           ),
                                           InkWell(
-                                            onTap: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user =
-                                                  await signInWithApple(
-                                                      context);
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              context.goNamedAuth(
-                                                  'HomePage', mounted);
-                                            },
+                                            onTap: () {},
                                             child: Container(
                                               width: 50,
                                               height: 50,
@@ -803,10 +513,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ),
                                               alignment:
                                                   AlignmentDirectional(0, 0),
-                                              child: FaIcon(
-                                                FontAwesomeIcons.apple,
-                                                color: Colors.white,
-                                                size: 24,
+                                              child: Text(
+                                                'Apple',
                                               ),
                                             ),
                                           ),
